@@ -1,0 +1,83 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}{{ page_title }} - أمانة منطقة القصيم {% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'pages/css/styles.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="welcome-section">
+    <h1 class="welcome-title">{{ welcome_message }}</h1>
+    <p class="welcome-description">{{ description }}</p>
+</div>
+
+<div class="decorative-line"></div>
+
+<h2 class="page-title">خدماتنا</h2>
+
+<div class="services-grid">
+    <div class="service-card">
+        <h3 class="service-title">الخدمات البلدية</h3>
+        <p class="service-description">تقديم خدمات بلدية متميزة تشمل الصيانة والنظافة والبنية التحتية</p>
+    </div>
+
+    <div class="service-card">
+        <h3 class="service-title">المشاريع التطويرية</h3>
+        <p class="service-description">تنفيذ مشاريع تطويرية حديثة لتحسين جودة الحياة في المنطقة</p>
+    </div>
+
+    <div class="service-card">
+        <h3 class="service-title">البيئة والنظافة</h3>
+        <p class="service-description">الحفاظ على البيئة وتعزيز النظافة العامة في جميع أنحاء المنطقة</p>
+    </div>
+
+    <div class="service-card">
+        <h3 class="service-title">التراخيص والتصاريح</h3>
+        <p class="service-description">إصدار التراخيص والتصاريح البلدية بكفاءة وسرعة</p>
+    </div>
+
+    <div class="service-card">
+        <h3 class="service-title">الرقابة والتفتيش</h3>
+        <p class="service-description">ضمان الالتزام بالمعايير والأنظمة البلدية</p>
+    </div>
+
+    <div class="service-card">
+        <h3 class="service-title">الابتكار والتطوير</h3>
+        <p class="service-description">تبني الحلول الذكية والتقنيات الحديثة في الخدمات البلدية</p>
+    </div>
+</div>
+
+<div class="stats-section">
+    <div class="stat-card">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">مشروع منجز</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-number">1M+</div>
+        <div class="stat-label">مستفيد من الخدمات</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">حديقة عامة</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">خدمة متواصلة</div>
+    </div>
+</div>
+
+<div class="vision-section">
+    <h2 class="vision-title">رؤيتنا 2030</h2>
+    <p class="vision-text">
+        نسعى لأن نكون نموذجاً رائداً في تقديم الخدمات البلدية المتميزة، ونساهم في تحقيق رؤية المملكة 2030 من خلال تطوير البنية التحتية وتحسين جودة الحياة وتعزيز الاستدامة البيئية في منطقة القصيم
+    </p>
+</div>
+
+{% endblock %}

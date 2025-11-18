@@ -1,0 +1,118 @@
+{% load static %}
+
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}أمانة منطقة القصيم{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'pages/css/styles.css' %}">
+    {% endblock %}
+
+</head>
+
+<body>
+    <div class="gov-banner">
+        <div class="gov-info">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/32px-Flag_of_Saudi_Arabia.svg.png" alt="شعار السعودية">
+            <span>موقع حكومي رسمي تابع لحكومة المملكة العربية السعودية</span>
+        <a class="verify-link" href="#">
+            كيف تتحقق
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"/>
+            </svg>
+        </a>
+        </div>
+    </div>
+
+    <header class="simplified-header">
+        <div class="header-menu">
+
+            <img src="{% static 'pages/images/qassim-logo.png' %}" width="230" >
+
+            <div class="dropdown-menu">
+                <span> <a href="{% url 'pages:home' %}">أمانة القصيم</a></span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <span>خدمات الأمانة</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <span>مركز المعرفة</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <span>المركز الإعلامي</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <span><a href="{% url 'pages:report' %}">التقارير</a></span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <span><a href="{% url 'pages:contact' %}">تواصل معنا</a></span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer>
+        <div class="footer-pattern"></div>
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-column-title">حول البوابة</div>
+                <ul>
+                    <li><a href="#">عن البوابة </a></li>
+                    <li><a href="#">سهولة الوصول</a></li>
+                    <li><a href="#">حديد البوابة</a></li>
+                    <li><a href="#">خريطة الموقع</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <div class="footer-column-title">السياسات</div>
+                <ul>
+                    <li><a href="#">اتفاقية مستوى الخدمة</a></li>
+                    <li><a href="#">سياسة الاستخدام الآمن</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">سياسة الوصول للمعلومات</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <div class="footer-column-title">روابط مهمة</div>
+                <ul>
+                    <li><a href="#">هيئة الحكومة الرقمية</a></li>
+                    <li><a href="#">المنصة الوطنية السعودية</a></li>
+                    <li><a href="#">منصة تفاعل</a></li>
+                    <li><a href="#">منصة البيانات المفتوحة</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <div class="footer-column-title">التواصل والدعم</div>
+                <ul>
+                    <li><a href="#">الدعم والمساعدة</a></li>
+                    <li><a href="#">الشكاوى والاقتراحات</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                    <li><a href="#">التوظيف</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>جميع حقوق الطبع والنشر محفوظة لدى أمانة منطقة القصيم ©</p>
+        </div>
+        
+    </footer>
+
+</body>
+</html>

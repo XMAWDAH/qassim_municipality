@@ -1,0 +1,88 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block title %}{{ page_title }} - أمانة منطقة القصيم{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'pages/css/styles.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<h1 class="page-title">{{ page_title }}</h1>
+
+<div class="reports-intro">
+    <p>
+        تصفح التقارير الدورية والإحصائيات الخاصة بأنشطة وخدمات أمانة منطقة القصيم. نحرص على الشفافية والمصداقية في عرض جميع البيانات والمعلومات.
+    </p>
+</div>
+
+<div class="stats-banner">
+    <div class="stat-box">
+        <div class="stat-box-number">{{ reports|length }}</div>
+        <div class="stat-box-label">تقرير متاح</div>
+    </div>
+
+    <div class="stat-box">
+        <div class="stat-box-number">12</div>
+        <div class="stat-box-label">تقرير شهري</div>
+    </div>
+
+    <div class="stat-box">
+        <div class="stat-box-number">4</div>
+        <div class="stat-box-label">تقرير ربع سنوي</div>
+    </div>
+
+    <div class="stat-box">
+        <div class="stat-box-number">100%</div>
+        <div class="stat-box-label">شفافية</div>
+    </div>
+</div>
+
+<div class="filter-section">
+    <span class="filter-label">تصفية حسب:</span>
+    <select class="filter-select">
+        <option>جميع التقارير</option>
+        <option>الخدمات البلدية</option>
+        <option>المشاريع التطويرية</option>
+        <option>البيئة والنظافة</option>
+        <option>التراخيص</option>
+    </select>
+
+    <select class="filter-select">
+        <option>الأحدث أولاً</option>
+        <option>الأقدم أولاً</option>
+        <option>الأكثر مشاهدة</option>
+    </select>
+</div>
+
+<div class="reports-container">
+    {% if reports %}
+        {% for report in reports %}
+        <div class="report-card">
+            <div class="report-header">
+                <h2 class="report-title">{{ report.title }}</h2>
+                <span class="report-date">{{ report.date }}</span>
+            </div>
+            <p class="report-description">{{ report.description }}</p>
+            <div class="report-actions">
+                <a href="#" class="btn btn-primary">عرض التقرير</a>
+                <a href="#" class="btn btn-secondary">تحميل PDF</a>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="no-reports">
+            <p>لا توجد تقارير متاحة حالياً</p>
+        </div>
+    {% endif %}
+</div>
+
+<div class="decorative-line" style="margin-top: 3rem;"></div>
+
+<div class="reports-intro" style="margin-top: 2rem;">
+    <p style="text-align: center;">
+        <strong>هل تحتاج إلى تقرير محدد؟</strong><br>
+        يمكنك التواصل معنا عبر البريد الإلكتروني: reports@qassim-mun.gov.sa
+    </p>
+</div>
+{% endblock %}
